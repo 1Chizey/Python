@@ -1,0 +1,70 @@
+print("Welcome to Python Pizza Deliveries \n ")
+pizza_menu = {"small": 15, 
+              "medium": 20, 
+              "large": 25, 
+              "pepperoni_small": 2, 
+              "pepperoni_medium":3, 
+              "pepperoni_large": 3, 
+              "cheese": 1}
+
+print(f"Here is our Pizza Menu list in Dollars ($):\n {pizza_menu}")
+
+shawarma_size = input("what size of shawarma do you want to purchase?: ")
+if shawarma_size not in ["small", "medium", "large"]:
+    print("Please we only offer small, large or medium")
+else:
+    pepperoni = input("Do you want Pepperoni with your pizza?: ")
+    if pepperoni == "yes":
+        print("What pepperoni size do you want? ")
+        pepperoni_size = input("pepperoni_small, pepperoni_medium, pepperoni_large: ")
+        if pepperoni_size not in ["pepperoni_small", "pepperoni_medium", "pepperoni_large"]:
+            print("Please we only offer pepperoni_small, pepperoni_medium or pepperoni_large")
+
+    cheese = input("Do you want cheeze with your pizza?: ")
+    if cheese == "yes" and pepperoni == "yes":
+        print("Thank you for placing your order! ")
+        total_bill = 0
+
+        user_size = pizza_menu[shawarma_size]
+        user_pepperoni = pizza_menu[pepperoni_size]
+        user_cheese = pizza_menu["cheese"]
+
+        #calculate the total bill
+        total_bill = user_size + user_pepperoni + user_cheese
+        print(f"Your total bill is: ${total_bill} ")
+    elif cheese != "yes" and pepperoni != "yes":
+        print("Thank you for placing your order! ")
+        total_bill = 0
+
+        user_size = pizza_menu[shawarma_size]
+
+        #calculate the total bill
+        total_bill = user_size 
+        print(f"Your total bill is: ${total_bill} ")
+    elif cheese == "yes" and pepperoni != "yes":
+        print("Thank you for placing your order! ")
+        total_bill = 0
+
+        user_size = pizza_menu[shawarma_size]
+        user_cheese = pizza_menu["cheese"]
+
+        #calculate the total bill
+        total_bill = user_size + user_cheese
+        print(f"Your total bill is: ${total_bill} ")
+    elif cheese != "yes" and pepperoni == "yes":
+        print("Thank you for placing your order! ")
+        total_bill = 0
+
+        user_size = pizza_menu[shawarma_size]
+        user_pepperoni = pizza_menu[pepperoni_size]
+        
+
+        #calculate the total bill
+        total_bill = user_size + user_pepperoni
+        print(f"Your total bill is: ${total_bill} ")
+        
+
+
+        
+
+        
